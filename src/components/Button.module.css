@@ -1,0 +1,26 @@
+.btn {
+  font-family: var(--font-head);
+  font-size: 10px;
+  padding: 10px 14px;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #000;
+  cursor: pointer;
+}
+.btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn:focus-visible {
+  outline: 2px dashed var(--ink);
+  outline-offset: 3px;
+}
+.pink { background: var(--pink); }
+.mint { background: var(--mint); }
+.yellow { background: var(--yellow); }
+.lilac { background: var(--lilac); }

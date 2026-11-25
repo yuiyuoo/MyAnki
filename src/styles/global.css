@@ -1,0 +1,64 @@
+:root {
+  --bg: #fff4f8;
+  --surface: #ffffff;
+  --ink: #1a1423;
+  --pink: #ff9ecf;
+  --mint: #9ff0c9;
+  --yellow: #ffe26b;
+  --lilac: #c9b6ff;
+  --font-head: 'Press Start 2P', monospace;
+  --font-body: 'VT323', monospace;
+}
+[data-theme='dark'] {
+  --bg: #1c1626;
+  --surface: #2a2238;
+  --ink: #f5ecff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 22px;
+  line-height: 1.2;
+  -webkit-font-smoothing: none;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  font-weight: normal;
+}
+h2 {
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+p {
+  margin: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.stat-label {
+  font-family: var(--font-head);
+  font-size: 10px;
+}
+.stat-value {
+  font-size: 48px;
+}
+.file-label input {
+  display: none;
+}
+.file-label span {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 2px dashed var(--ink);
+  cursor: pointer;
+}

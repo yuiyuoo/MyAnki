@@ -1,0 +1,15 @@
+.card {
+  background: var(--surface);
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #000;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.pink { border-top: 8px solid var(--pink); }
+.mint { border-top: 8px solid var(--mint); }
+.yellow { border-top: 8px solid var(--yellow); }
+.lilac { border-top: 8px solid var(--lilac); }
