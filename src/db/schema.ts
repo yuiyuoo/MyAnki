@@ -1,5 +1,10 @@
 import Dexie, { type Table } from 'dexie';
 
+/**
+ * Grade = the button the user pressed after seeing the answer.
+ * 0 = Again (forgot it), 1 = Hard (remembered with difficulty),
+ * 2 = Good (remembered normally), 3 = Easy (remembered instantly).
+ */
 export type Grade = 0 | 1 | 2 | 3;
 
 export interface Deck {
@@ -9,16 +14,31 @@ export interface Deck {
   createdAt: string;
 }
 
+/** Card = one flashcard: a question (front) and an answer (back), plus its learning progress. */
 export interface Card {
+  /** Unique ID of this card. */
   id: string;
+  /** ID of the deck this card belongs to. */
   deckId: string;
+  /** Question side, e.g. "der Apfel". */
   front: string;
+  /** Answer side, e.g. "the apple". */
   back: string;
+  /** Labels for filtering, e.g. ["food"]. */
   tags: string[];
+  /**
+   * How easy the card is for you: the multiplier for the next interval.
+   * Starts at 2.5. Easy raises it, Hard/Again lower it, never below 1.3.
+   * Example: interval 4 days × ease 2.5 → next interval 10 days.
+   */
   ease: number;
+  /** Days between the last review and the next one. 0 = review again right away. */
   interval: number;
+  /** When the card should be shown next (ISO date string). Due when this is now or in the past. */
   due: string;
+  /** How many times in a row you answered correctly. Again resets it to 0. */
   reps: number;
+  /** When the card was created (ISO date string). */
   createdAt: string;
 }
 
